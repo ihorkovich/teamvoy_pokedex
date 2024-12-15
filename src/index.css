@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Flexo";
+  src: local("Flexo"), url("/fonts/Flexo-Regular.woff") format("woff");
+}

@@ -1,3 +1,5 @@
+The site was deployed on vercel - https://pokedexteamvoy.vercel.app/
+
 # Pokémon App
 
 An application for exploring Pokémon. The app was built with React and Tailwind

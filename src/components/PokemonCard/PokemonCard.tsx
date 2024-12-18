@@ -1,4 +1,4 @@
-const typeColors = {
+const typeColors: { [key: string]: string } = {
   grass: "#7BBF6A",
   poison: "#9B57A5",
   fire: "#F27D54",
@@ -17,26 +17,35 @@ const typeColors = {
   dark: "#6A4C47",
   steel: "#A8B2B8",
   fairy: "#F1A7C8",
+  stellar: "#C0C0C0",
+  unknown: "#8A8A8A",
 };
 
-const PokemonCard = ({ id, img, name, type }) => {
+type ReceivedPokemonData = {
+  id: number;
+  img: string;
+  name: string;
+  type: { type: { name: string } }[];
+};
+
+const PokemonCard = ({ id, img, name, type }: ReceivedPokemonData) => {
   return (
-    <div className="rounded-2xl duration-300 hover:shadow-xl hover:cursor-pointer">
-      <img src={img} alt={name} className="bg-gray-200 rounded-t-[inherit]" />
-      <div className="p-2 flex flex-col justify-left border-l border-r border-b rounded-b-2xl border-gray-200">
-        <p className="text-gray-500 font-flexo text-sm">{`#${String(
-          id
+    <div className="rounded-2xl duration-300 hover:cursor-pointer hover:shadow-xl">
+      <img src={img} alt={name} className="rounded-t-[inherit] bg-gray-200" />
+      <div className="justify-left flex flex-col rounded-b-2xl border-b border-l border-r border-gray-200 p-2">
+        <p className="font-flexo text-sm text-gray-500">{`#${String(
+          id,
         ).padStart(4, "0")}`}</p>
         <h2 className="font-flexo font-bold">
           {name.substr(0, 1).toUpperCase().concat(name.substr(1))}
         </h2>
-        <p className="flex gap-2 mt-1">
+        <p className="mt-1 flex gap-2">
           {type &&
             type.map((typeObj) => {
               return (
                 <span
                   key={typeObj.type.name}
-                  className={`px-3 py-[1px] border rounded-lg text-white`}
+                  className={`rounded-lg border px-3 py-[1px] text-white`}
                   style={{ backgroundColor: typeColors[typeObj.type.name] }}
                 >
                   {typeObj.type.name

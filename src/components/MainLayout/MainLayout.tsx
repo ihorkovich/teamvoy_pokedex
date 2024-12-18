@@ -2,15 +2,15 @@ import Navbar from "../Navbar/Navbar";
 import DetailedPokemonCard from "../DetailedPokemonCard/DetailedPokemonCard";
 import PokemonBoard from "../PokemonBoard/PokemonBoard";
 import { PokemonProvider } from "../../Context/DetailedPokemonContext";
-import GoToTop from "../goToTop/goToTop";
+import GoToTop from "../GoToTop/GoToTop";
 
 const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="container max-w-[1440px] px-4 lg:px-12 flex flex-col mx-auto">
+      <div className="container mx-auto flex max-w-[1440px] flex-col px-4 lg:px-12">
         <PokemonProvider>
-          <div className="flex mt-5 flex-col md:justify-between gap-5 md:flex-row-reverse px-4">
+          <div className="mt-5 flex flex-col gap-5 px-4 md:flex-row-reverse md:justify-between">
             <DetailedPokemonCard />
             <PokemonBoard />
           </div>

@@ -4,5 +4,7 @@
 
 @font-face {
   font-family: "Flexo";
-  src: local("Flexo"), url("/fonts/Flexo-Regular.woff") format("woff");
+  src:
+    local("Flexo"),
+    url("/fonts/Flexo-Regular.woff") format("woff");
 }
